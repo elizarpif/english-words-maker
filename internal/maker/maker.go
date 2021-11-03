@@ -15,18 +15,26 @@ type Maker struct {
 	result     *os.File
 	res1       *os.File
 	res2       *os.File
+	isLesson bool
 
 	records [][]string
 }
 
-func NewMaker(day int) *Maker {
+func NewMaker(day int, isLesson bool) *Maker {
 	if day < 1 {
 		panic("day < 1")
 	}
 
-	m := &Maker{}
+	m := &Maker{
+		isLesson: isLesson,
+	}
 
-	m.openVocabulary()
+	vocabularyName := vocabulary
+	if isLesson {
+		vocabularyName = lessonVocabulary
+	}
+
+	m.openVocabulary(vocabularyName)
 	m.createResults()
 	m.readVocabulary(day)
 
@@ -35,12 +43,13 @@ func NewMaker(day int) *Maker {
 
 const (
 	vocabulary         = "assets/toefl_words.csv"
+	lessonVocabulary   = "assets/data.csv"
 	resultWords        = "assets/result.txt"
 	result1            = "assets/result1.txt"
 	result2            = "assets/result2.txt"
 	templateRandResult = "assets/rand"
 	max                = 20
-	maxForPerson = 10
+	maxForPerson       = 10
 )
 
 func (m *Maker) readVocabulary(day int) {
@@ -51,7 +60,10 @@ func (m *Maker) readVocabulary(day int) {
 		panic(err)
 	}
 
-	records = shuflleRecords(records)
+	if !m.isLesson{
+		records = shuflleRecords(records)
+	}
+
 	n := day - 1 // 0
 	m.records = records[n*max : day*max]
 }
@@ -65,8 +77,8 @@ func shuflleRecords(records [][]string) [][]string {
 	return records
 }
 
-func (m *Maker) openVocabulary() {
-	file, err := os.Open(vocabulary)
+func (m *Maker) openVocabulary(vocabularyName string) {
+	file, err := os.Open(vocabularyName)
 	if err != nil {
 		panic(err)
 	}
@@ -124,12 +136,24 @@ func (m *Maker) AllFromToeflVocabulary() {
 			break
 		}
 
-		str := strings.Trim(v[2], "\"") + "\n"
+		var err error
+		var str string
 
-		_, err := m.result.WriteString(fmt.Sprintf("%s - %s - %s\n",
-			strings.Trim(v[0], "\""),
-			strings.Trim(v[1], "\""),
-			strings.Trim(v[2], "\"")))
+		if m.isLesson {
+			str = strings.Trim(v[1], "\"") + "\n"
+
+			_, err = m.result.WriteString(fmt.Sprintf("%s - %s \n",
+				strings.Trim(v[0], "\""),
+				strings.Trim(v[1], "\"")))
+		} else {
+			str = strings.Trim(v[2], "\"") + "\n"
+
+			_, err = m.result.WriteString(fmt.Sprintf("%s - %s - %s\n",
+				strings.Trim(v[0], "\""),
+				strings.Trim(v[1], "\""),
+				strings.Trim(v[2], "\"")))
+		}
+
 		if err != nil {
 			panic(err)
 		}
@@ -158,7 +182,10 @@ func (m *Maker) randFromToeflVocabulary(file *os.File) {
 			break
 		}
 
-		str := strings.Trim(v[2], "\"") + "\n"
+		str := strings.Trim(v[1], "\"") + "\n"
+		if !m.isLesson{
+			str = strings.Trim(v[2], "\"") + "\n"
+		}
 
 		_, err := file.WriteString(fmt.Sprintf("%s%s", randSpace(), str))
 		if err != nil {
