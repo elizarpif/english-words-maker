@@ -19,6 +19,34 @@ func NewCsvMaker() *CsvMaker {
 	return &CsvMaker{}
 }
 
+
+func (m *CsvMaker) GetWords() [][]string {
+	plan, err := ioutil.ReadFile(jsonName)
+	if err != nil {
+		panic(err)
+	}
+
+	var data map[string]string
+
+	err = json.Unmarshal(plan, &data)
+	if err != nil {
+		panic(err)
+	}
+
+	res := [][]string{}
+
+	for k, v := range data{
+		t := [][]string{[]string{k, v}}
+
+		res = append(res, t...)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	return res
+}
+
 func (m *CsvMaker) Do() {
 	plan, err := ioutil.ReadFile(jsonName)
 	if err != nil {

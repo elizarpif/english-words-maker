@@ -15,7 +15,7 @@ type Maker struct {
 	result     *os.File
 	res1       *os.File
 	res2       *os.File
-	isLesson bool
+	isLesson   bool
 
 	records [][]string
 }
@@ -42,14 +42,16 @@ func NewMaker(day int, isLesson bool) *Maker {
 }
 
 const (
-	vocabulary         = "assets/toefl_words.csv"
-	lessonVocabulary   = "assets/data.csv"
-	resultWords        = "assets/result.txt"
-	result1            = "assets/result1.txt"
-	result2            = "assets/result2.txt"
-	templateRandResult = "assets/rand"
-	max                = 20
-	maxForPerson       = 10
+	vocabulary               = "assets/toefl_words.csv"
+	lessonVocabulary         = "assets/data.csv"
+	resultWords              = "assets/result.txt"
+	result1                  = "assets/result1.txt"
+	result2                  = "assets/result2.txt"
+	templateRandRusResult    = "assets/rand_rus"
+	templateRandEndResult    = "assets/rand_eng"
+	templateVocabularyResult = "assets/vocabulary"
+	max                      = 30
+	maxForPerson             = 20
 )
 
 func (m *Maker) readVocabulary(day int) {
@@ -60,7 +62,7 @@ func (m *Maker) readVocabulary(day int) {
 		panic(err)
 	}
 
-	if !m.isLesson{
+	if !m.isLesson {
 		records = shuflleRecords(records)
 	}
 
@@ -173,9 +175,11 @@ func (m *Maker) AllFromToeflVocabulary() {
 }
 
 // randFromToeflVocabulary из 20 слов берет рандомные 10 на листик
-func (m *Maker) randFromToeflVocabulary(file *os.File) {
+func (m *Maker) randFromToeflVocabulary(fileName string) error {
 	records := m.records
 	records = shuflleRecords(records)
+
+	values := make([]string, 0, len(records))
 
 	for i, v := range records {
 		if i == maxForPerson {
@@ -183,26 +187,92 @@ func (m *Maker) randFromToeflVocabulary(file *os.File) {
 		}
 
 		str := strings.Trim(v[1], "\"") + "\n"
-		if !m.isLesson{
+		if !m.isLesson {
 			str = strings.Trim(v[2], "\"") + "\n"
 		}
 
-		_, err := file.WriteString(fmt.Sprintf("%s%s", randSpace(), str))
-		if err != nil {
-			panic(err)
-		}
+		values = append(values, fmt.Sprintf("%s%s", randSpace(), str))
 	}
-}
-func (m *Maker) RandFromToeflVocabulary(listCount int) {
-	for i := 0; i < listCount; i++ {
-		file, err := os.Create(templateRandResult + strconv.Itoa(i+1) + ".txt")
-		if err != nil {
-			panic(err)
-		}
-		defer file.Close()
 
-		m.randFromToeflVocabulary(file)
+	err := toOdf(fileName, values)
+	return err
+}
+
+func (m *Maker) RandFromToeflVocabulary(listCount int) error {
+	var err error
+
+	for i := 0; i < listCount; i++ {
+		err = m.randFromToeflVocabulary(templateRandRusResult + strconv.Itoa(i+1) + ".txt")
+		if err != nil {
+			break
+		}
 	}
+
+	return err
+}
+
+func GetMap(words [][]string) map[string]string {
+	mapW := make(map[string]string)
+	for _, w := range words {
+		mapW[w[0]] = w[1]
+	}
+
+	return mapW
+}
+
+func Vocabulary(words [][]string) error {
+	records := shuflleRecords(words)
+
+	newWordsFile, err := os.Create(templateVocabularyResult + ".txt")
+	if err != nil {
+		return err
+	}
+	defer newWordsFile.Close()
+
+	for j := 0; j < len(records); j++ {
+		_, err = newWordsFile.WriteString(fmt.Sprintf("%s - %s\n", records[j][0], records[j][1]))
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+func CreateGames(words [][]string, players int) error {
+	for i := 0; i < players; i++ {
+		records := shuflleRecords(words)
+
+		var values []string
+		var valuesEng []string
+		for j := 0; j < len(records)-5; j++ {
+			values = append(values, fmt.Sprintf("%s%s", randSpace(), records[j][1]))
+			valuesEng = append(valuesEng, fmt.Sprintf("%s%s", randSpace(), records[j][0]))
+		}
+
+		newWordsFile, err := os.Create(templateRandRusResult + strconv.Itoa(i+1) + ".txt")
+		if err != nil {
+			return err
+		}
+		defer newWordsFile.Close()
+
+		_, err = newWordsFile.WriteString(strings.Join(values, "\n"))
+		if err != nil {
+			return err
+		}
+
+		newWordsFileEng, err := os.Create(templateRandEndResult + strconv.Itoa(i+1) + ".txt")
+		if err != nil {
+			return err
+		}
+		defer newWordsFileEng.Close()
+
+		_, err = newWordsFileEng.WriteString(strings.Join(valuesEng, "\n"))
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
 
 // randSpace - генерит рандомное количество пробелов для размещения слов в любом месте строки
