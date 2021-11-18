@@ -10,6 +10,10 @@ import (
 )
 
 func main() {
+	Activity()
+}
+
+func files() {
 	words, err := jsonwords.GetWords()
 	if err != nil {
 		log.Fatal(err)
@@ -34,8 +38,8 @@ func Activity() {
 	}
 
 	mapW := maker.GetMap(words)
-
 	sc := bufio.NewScanner(os.Stdin)
+
 	for key, value := range mapW {
 		fmt.Printf("generated %s - %s\n", key, value)
 		sc.Scan()
