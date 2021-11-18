@@ -1,79 +1,79 @@
-net - чистая
-battle - бой
-precipitation - осадки
-phonetic - фонетический
-delinquency - просрочка
-regulate - регулировать
-abstract - абстракция, аннотация
-symbolic - символический
-cause - причина
-per capita - на душу населения
-inhibit - подавить, запретить
-artillery - артиллерия
-fertilize - удобрение
-tangible - материальное
-portrayal - изображение кого-то, портрет
-status quo - статус-кво
-hedonistic - гедонистический, учение о счастье
-ratio - соотношение
-adversely - неблагоприятно
-manipulation - манипуляция
-vulnerable - уязвимый
-photosynthesis - фотосинтез
-amateurish - дилетанский
-intensify - усилить, усиливать
-gala - праздничный
-decline - снижать, отменять
-strategic - стратегическое
-context - контекст
-hillarious - веселый
-rebel - бунтарь
-incompetent - некомпетентный
-bulk - тяжелый вид, навалом, масса
-skit - скетч, короткая игра, пародия
-cultivation - выращивание
-obtain - получить
-exotic - экзотический
-conflict - конфликт
-mobilize - мобилизировать
-dimension - измерение
-perspective - перспектива
-an inscription - надпись
-allocate - распределять
-fringe - край, грань (бахрома)
-ambiguous - двусмысленный, неопределенный
-aggregate - совокупный, общий
-depict - изображать
-ingenious - гениальный
-cast - группа актеров
-hierarchy - иерархия
-charismatic - харизматический
-cease - прекращение
-equity - капитал
-subsidy - субсидия
-cumbersome - громоздкий
-adolescent - подростковый
-vanity - тщеславие
-inflation - инфляция
-trend - тенденция
-to decipher - расшифровать
-hypocritically - лицемерно
-realism - реализм
-minimum - минимум
-abandon - бросать, сдаваться
-intrinsic - неотъемлемая часть, внутренний
-medium - средний
-striking - поразительный, заметный
-zeal - усердие, энтузиазм
-illiterate - неграмотный
-irrigation - полив, орошение
-in the trenches - в окопах
-allegiance - лояльность
-a connotation - то, что подразумевается, созначение
-commodity - товар
-rank - звание
-improvisation - импровизация
-esthetically - эстетично
-to denote - обозначать
-spectrum - спектр
-capricious - капризный
+0) aggregate - совокупный, общий
+1) realism - реализм
+2) capricious - капризный
+3) tangible - материальное
+4) hillarious - веселый
+5) allegiance - лояльность
+6) esthetically - эстетично
+7) striking - поразительный, заметный
+8) dimension - измерение
+9) zeal - усердие, энтузиазм
+10) battle - бой
+11) fringe - край, грань (бахрома)
+12) rank - звание
+13) intrinsic - неотъемлемая часть, внутренний
+14) subsidy - субсидия
+15) incompetent - некомпетентный
+16) status quo - статус-кво
+17) inflation - инфляция
+18) bulk - тяжелый вид, навалом, масса
+19) perspective - перспектива
+20) commodity - товар
+21) hypocritically - лицемерно
+22) cultivation - выращивание
+23) strategic - стратегическое
+24) rebel - бунтарь
+25) adversely - неблагоприятно
+26) ingenious - гениальный
+27) trend - тенденция
+28) symbolic - символический
+29) ambiguous - двусмысленный, неопределенный
+30) abandon - бросать, сдаваться
+31) mobilize - мобилизировать
+32) irrigation - полив, орошение
+33) regulate - регулировать
+34) gala - праздничный
+35) minimum - минимум
+36) precipitation - осадки
+37) skit - скетч, короткая игра, пародия
+38) depict - изображать
+39) exotic - экзотический
+40) per capita - на душу населения
+41) phonetic - фонетический
+42) obtain - получить
+43) intensify - усилить, усиливать
+44) manipulation - манипуляция
+45) cease - прекращение
+46) a connotation - то, что подразумевается, созначение
+47) in the trenches - в окопах
+48) an inscription - надпись
+49) context - контекст
+50) ratio - соотношение
+51) conflict - конфликт
+52) photosynthesis - фотосинтез
+53) vanity - тщеславие
+54) equity - капитал
+55) inhibit - подавить, запретить
+56) artillery - артиллерия
+57) net - чистая
+58) spectrum - спектр
+59) illiterate - неграмотный
+60) decline - снижать, отменять
+61) medium - средний
+62) hedonistic - гедонистический, учение о счастье
+63) cumbersome - громоздкий
+64) amateurish - дилетанский
+65) abstract - абстракция, аннотация
+66) delinquency - просрочка
+67) to decipher - расшифровать
+68) allocate - распределять
+69) hierarchy - иерархия
+70) fertilize - удобрение
+71) vulnerable - уязвимый
+72) cause - причина
+73) portrayal - изображение кого-то, портрет
+74) adolescent - подростковый
+75) charismatic - харизматический
+76) improvisation - импровизация
+77) cast - группа актеров
+78) to denote - обозначать
