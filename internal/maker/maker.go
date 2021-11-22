@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -39,7 +38,6 @@ func GetSmallMap(words [][]string) map[string]string {
 
 func getMap(words [][]string, isDecrease bool) map[string]string {
 	mapW := make(map[string]string)
-	words = shuflleRecords(words)
 
 	if isDecrease {
 		words = words[:maxForPerson]
@@ -70,66 +68,6 @@ func Vocabulary(words [][]string) error {
 	}
 
 	return nil
-}
-
-func createRusEngGames(words [][]string, players int) error {
-	for i := 0; i < players; i++ {
-		records := shuflleRecords(words)
-
-		var values []string
-		var valuesEng []string
-
-		// len(records) - 5 - чтобы покрыть большее число слов
-		for j := 0; j < len(records)-5; j++ {
-			values = append(values, fmt.Sprintf("%s%s", randSpace(), records[j][1]))
-			valuesEng = append(valuesEng, fmt.Sprintf("%s%s", randSpace(), records[j][0]))
-		}
-
-		err := writeToFile(values, templateRandRusResult+strconv.Itoa(i+1)+txtExtension)
-		if err != nil {
-			return err
-		}
-
-		err = writeToFile(valuesEng, templateRandEndResult+strconv.Itoa(i+1)+txtExtension)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-}
-
-// CreateGames creates files for players
-func CreateGames(words [][]string, players int) error {
-	for i := 0; i < players; i++ {
-		records := shuflleRecords(words)
-
-		var valuesEng []string
-
-		// len(records) - 5 - чтобы покрыть большее число слов
-		for j := 0; j < len(records)-5; j++ {
-			valuesEng = append(valuesEng, fmt.Sprintf("%s%s", randSpace(), records[j][0]))
-		}
-
-		err := writeToFile(valuesEng, templateRandEndResult+strconv.Itoa(i+1)+txtExtension)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-}
-
-// writeToFile writes []string to file
-func writeToFile(values []string, fileName string) error {
-	newWordsFile, err := os.Create(fileName)
-	if err != nil {
-		return err
-	}
-	defer newWordsFile.Close()
-
-	_, err = newWordsFile.WriteString(strings.Join(values, "\n"))
-	return err
 }
 
 // randSpace - генерит рандомное количество пробелов для размещения слов в любом месте строки
