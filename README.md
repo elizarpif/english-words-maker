@@ -46,10 +46,10 @@ Example
 
 ### 3. StoryTeller
 ```go
-	err := maker.StoryTeller(3)
-	if err != nil {
-		log.Fatal(err)
-	}
+err := maker.StoryTeller(3)
+if err != nil {
+    log.Fatal(err)
+}
 ```
 
 Example
