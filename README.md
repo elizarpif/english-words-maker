@@ -44,7 +44,7 @@ Example
 ```
 
 
-### 2. StoryTeller
+### 3. StoryTeller
 ```go
 	err := maker.StoryTeller(3)
 	if err != nil {
