@@ -36,8 +36,29 @@ for key, value := range mapW {
 
 Example
 ```shell
->> generated esthetically - эстетично
->> generated cause - причина
-...
->> generated striking - поразительный, заметный
+>> Activity started
+
+>> generated "battle" - [бой]
+
+>> generated "dimension" - [измерение]
+```
+
+
+### 2. StoryTeller
+```go
+	err := maker.StoryTeller(3)
+	if err != nil {
+		log.Fatal(err)
+	}
+```
+
+Example
+```shell
+>> StoryTeller for 3 people started
+
+>> generated: (vanity, intrinsic, obtain, cause)
+
+>> generated: (subsidy, to denote, perspective, inflation)
+
+>> generated: (hypocritically, fringe, manipulation, minimum)
 ```
