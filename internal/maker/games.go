@@ -40,11 +40,11 @@ func createRusEngGames(words [][]string, players int) error {
 func CreateLotoFiles(words [][]string, players int) error {
 	for i := 0; i < players; i++ {
 		records := shuflleRecords(words)
+		records = records[len(records)-30:]
 
 		var valuesEng []string
 
-		// len(records) - 5 - чтобы покрыть большее число слов
-		for j := 0; j < len(records)-5; j++ {
+		for j := 0; j < len(records); j++ {
 			valuesEng = append(valuesEng, fmt.Sprintf("%s%s", randSpace(), records[j][0]))
 		}
 
@@ -59,17 +59,40 @@ func CreateLotoFiles(words [][]string, players int) error {
 
 const maxWordsForStoryTeller = 4
 
-// StoryTeller randomises 4 words from list of words
-func StoryTeller(peopleCount int) error {
+
+// StoryTellerByAndrew randomises words
+func StoryTellerByAndrew() error {
 	words, err := jsonwords.GetWords()
 	if err != nil {
 		return err
 	}
 
-	fmt.Printf("StoryTeller for %d people started\n\n", peopleCount)
+	// maybe shuffleRecords is not necessary
+	words = shuflleRecords(words)
+
+	mapW := GetMap(words)
 	sc := bufio.NewScanner(os.Stdin)
 
-	for j := 0; j < peopleCount; j++ {
+	fmt.Printf("StoryTellerByAndrew started\n\n")
+
+	for key, value := range mapW {
+		fmt.Printf("generated \"%s\" - [%s]\n", key, value)
+		sc.Scan()
+	}
+
+	return nil
+}
+// StoryTeller randomises 4 words from list of words
+func StoryTeller() error {
+	words, err := jsonwords.GetWords()
+	if err != nil {
+		return err
+	}
+
+	fmt.Printf("StoryTeller started\n\n")
+	sc := bufio.NewScanner(os.Stdin)
+
+	for ; ; {
 		words = shuflleRecords(words)
 
 		var generated []string
@@ -100,9 +123,17 @@ func Activity() error {
 
 	fmt.Printf("Activity started\n\n")
 
+	i := 0
+
 	for key, value := range mapW {
+		if i == 20 {
+			break
+		}
+
 		fmt.Printf("generated \"%s\" - [%s]\n", key, value)
 		sc.Scan()
+
+		i++
 	}
 
 	return nil

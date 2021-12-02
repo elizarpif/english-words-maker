@@ -61,7 +61,7 @@ func Vocabulary(words [][]string) error {
 	defer newWordsFile.Close()
 
 	for j := 0; j < len(records); j++ {
-		_, err = newWordsFile.WriteString(fmt.Sprintf("%d) %s - %s\n", j, records[j][0], records[j][1]))
+		_, err = newWordsFile.WriteString(fmt.Sprintf("%d) %s - %s\n", j+1, records[j][0], records[j][1]))
 		if err != nil {
 			return err
 		}

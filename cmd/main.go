@@ -7,15 +7,17 @@ import (
 )
 
 func main() {
-	err := maker.StoryTeller(3)
-	if err != nil {
-		log.Fatal(err)
-	}
+	files()
 
-	err = maker.Activity()
-	if err != nil {
-		log.Fatal(err)
-	}
+	//err := maker.StoryTeller()
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+
+	//err := maker.Activity()
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 }
 
 func files() {
@@ -29,7 +31,7 @@ func files() {
 		log.Fatal(err)
 	}
 
-	err = maker.CreateLotoFiles(words, 3)
+	err = maker.CreateLotoFiles(words, 4)
 	if err != nil {
 		log.Fatal(err)
 	}

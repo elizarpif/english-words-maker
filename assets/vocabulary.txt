@@ -1,79 +1,119 @@
-0) aggregate - совокупный, общий
-1) realism - реализм
-2) capricious - капризный
-3) tangible - материальное
-4) hillarious - веселый
-5) allegiance - лояльность
-6) esthetically - эстетично
-7) striking - поразительный, заметный
-8) dimension - измерение
-9) zeal - усердие, энтузиазм
-10) battle - бой
-11) fringe - край, грань (бахрома)
-12) rank - звание
-13) intrinsic - неотъемлемая часть, внутренний
-14) subsidy - субсидия
-15) incompetent - некомпетентный
-16) status quo - статус-кво
-17) inflation - инфляция
-18) bulk - тяжелый вид, навалом, масса
-19) perspective - перспектива
-20) commodity - товар
-21) hypocritically - лицемерно
-22) cultivation - выращивание
-23) strategic - стратегическое
-24) rebel - бунтарь
-25) adversely - неблагоприятно
-26) ingenious - гениальный
-27) trend - тенденция
-28) symbolic - символический
-29) ambiguous - двусмысленный, неопределенный
+1) inheritance - наследование
+2) allocate - распределять
+3) hilarious - веселый
+4) symbolic - символический
+5) commodity - товар
+6) bulk - тяжелый вид, навалом, масса
+7) fluctuate - колебаться
+8) passion - страсть
+9) exclusive - эксклюзивный
+10) vitriolic - саркастический, токсичный
+11) engender - породить
+12) shame - позор, стыд
+13) obnoxious - неприятный
+14) dimension - измерение
+15) precipitation - осадки
+16) illiterate - неграмотный
+17) sentiment - настроение
+18) esthetically - эстетично
+19) bond - связь (близкая)
+20) incompetent - некомпетентный
+21) reciprocity - взаимность
+22) loyal - лояльный
+23) abstract - абстракция, аннотация
+24) irrigation - полив, орошение
+25) fertilize - удобрение
+26) in the trenches - в окопах
+27) capricious - капризный
+28) photosynthesis - фотосинтез
+29) vanity - тщеславие
 30) abandon - бросать, сдаваться
-31) mobilize - мобилизировать
-32) irrigation - полив, орошение
-33) regulate - регулировать
-34) gala - праздничный
-35) minimum - минимум
-36) precipitation - осадки
-37) skit - скетч, короткая игра, пародия
-38) depict - изображать
-39) exotic - экзотический
-40) per capita - на душу населения
-41) phonetic - фонетический
-42) obtain - получить
-43) intensify - усилить, усиливать
-44) manipulation - манипуляция
-45) cease - прекращение
-46) a connotation - то, что подразумевается, созначение
-47) in the trenches - в окопах
-48) an inscription - надпись
-49) context - контекст
-50) ratio - соотношение
-51) conflict - конфликт
-52) photosynthesis - фотосинтез
-53) vanity - тщеславие
-54) equity - капитал
-55) inhibit - подавить, запретить
-56) artillery - артиллерия
-57) net - чистая
-58) spectrum - спектр
-59) illiterate - неграмотный
-60) decline - снижать, отменять
-61) medium - средний
-62) hedonistic - гедонистический, учение о счастье
-63) cumbersome - громоздкий
-64) amateurish - дилетанский
-65) abstract - абстракция, аннотация
-66) delinquency - просрочка
-67) to decipher - расшифровать
-68) allocate - распределять
-69) hierarchy - иерархия
-70) fertilize - удобрение
-71) vulnerable - уязвимый
-72) cause - причина
-73) portrayal - изображение кого-то, портрет
-74) adolescent - подростковый
-75) charismatic - харизматический
-76) improvisation - импровизация
-77) cast - группа актеров
-78) to denote - обозначать
+31) antipathy - антипатия
+32) gala - праздничный
+33) contemptuous - презрительный, без уважения
+34) arrogantly - высокомерно
+35) legitimate - законный
+36) realism - реализм
+37) zeal - усердие, энтузиазм
+38) kin (c.p. next of kin) - род
+39) fringe - край, грань (бахрома)
+40) despise - презирать, сильно ненавидеть
+41) depict - изображать
+42) clique - клика, шайка, банда
+43) proliferation - распространение
+44) adolescent - подростковый
+45) ratio - соотношение
+46) cultivation - выращивание
+47) affection - привязанность
+48) improvisation - импровизация
+49) despondent - уныние
+50) stigmatize - клеймить позором
+51) tangible - материальное
+52) dilemma - дилемма
+53) rank - звание
+54) rebel - бунтарь
+55) decline - снижать, отменять
+56) berate - ругать
+57) mobilize - мобилизировать
+58) hierarchy - иерархия
+59) portrayal - изображение кого-то, портрет
+60) subsidy - субсидия
+61) intrinsic - неотъемлемая часть, внутренний
+62) net - чистая
+63) context - контекст
+64) exotic - экзотический
+65) skit - скетч, короткая игра, пародия
+66) cast - группа актеров
+67) charismatic - харизматический
+68) inhibit - подавить, запретить
+69) complex - сложный
+70) confide - уверенность
+71) to decipher - расшифровать
+72) phonetic - фонетический
+73) cause - причина
+74) inflation - инфляция
+75) humiliation - унижение
+76) equity - капитал
+77) regulate - регулировать
+78) ambiguous - двусмысленный, неопределенный
+79) obtain - получить
+80) battle - бой
+81) willing - готовый что-то делать
+82) solidarity - солидарность
+83) vanish - исчезать (внезапно)
+84) to denote - обозначать
+85) strategic - стратегическое
+86) medium - средний
+87) proximity (of/to) - близость
+88) status quo - статус-кво
+89) perspective - перспектива
+90) cohesion - сплоченность
+91) manipulation - манипуляция
+92) amateurish - дилетанский
+93) intensify - усилить, усиливать
+94) adversely - неблагоприятно
+95) delinquency - просрочка
+96) in common - в общем
+97) sibling - родной брат/сестра
+98) aggregate - совокупный, общий
+99) cease - прекращение
+100) striking - поразительный, заметный
+101) associate - связывать
+102) vulnerable - уязвимый
+103) per capita - на душу населения
+104) spectrum - спектр
+105) conflict - конфликт
+106) paternal (maternal) - отцовский
+107) descendant (of) - потомок
+108) devotion - преданность
+109) hypocritically - лицемерно
+110) a connotation - то, что подразумевается, созначение
+111) cumbersome - громоздкий
+112) trend - тенденция
+113) ancestral - наследственный
+114) minimum - минимум
+115) ingenious - гениальный
+116) an inscription - надпись
+117) hedonistic - гедонистический, учение о счастье
+118) allegiance - лояльность
+119) artillery - артиллерия
